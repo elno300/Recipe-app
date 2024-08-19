@@ -1,20 +1,16 @@
 import React from "react";
-import axios from "axios";
+
 import { useEffect, useState } from "react";
 import {
   View,
   Text,
-  Button,
   StyleSheet,
-  ScrollView,
   FlatList,
   Image,
   Pressable,
 } from "react-native";
 
 import { fetchMeal } from "../utils/api";
-
-// const apiUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
 
 export default function RecipeListScreen({ navigation }) {
   const [recipes, setRecipes] = useState([]);
@@ -31,7 +27,7 @@ export default function RecipeListScreen({ navigation }) {
   }, []);
 
   return (
-    <ScrollView contentContainerStyle={styles.cardContainer}>
+    <View style={styles.cardContainer}>
       <FlatList
         style={styles.cardWrapper}
         data={recipes}
@@ -41,7 +37,7 @@ export default function RecipeListScreen({ navigation }) {
             <Pressable
               style={styles.card}
               onPress={() =>
-                navigation.navigate("RecipeDetail", { recipeId: item.strMeal })
+                navigation.navigate("RecipeDetail", { recipeId: item.idMeal })
               }
             >
               <Image
@@ -61,7 +57,8 @@ export default function RecipeListScreen({ navigation }) {
           </View>
         )}
       />
-    </ScrollView>
+    </View>
+    // </ScrollView>
   );
 }
 
@@ -93,15 +90,9 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 16,
     fontWeight: "680",
-    // fontFamily: "Quicksand_300Light",
     marginTop: 20,
     marginBottom: 20,
     color: "#5a6f60",
+    fontFamily: "font",
   },
-  // container: {
-  //   flex: 1,
-  //   backgroundColor: "#fff",
-  //   // alignItems: "center",
-  //   // justifyContent: "center",
-  // },
 });

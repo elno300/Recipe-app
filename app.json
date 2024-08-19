@@ -4,12 +4,12 @@
     "slug": "recipe-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/images/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#d3e3d8"
     },
     "ios": {
       "supportsTablet": true
@@ -21,7 +21,20 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/images/splash.png"
+    },
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Grenze-SemiBold.ttf",
+            "./assets/fonts/AvenirNextCyr-Medium.ttf",
+            "./assets/fonts/SlateMedium.ttf",
+            "./assets/fonts/Austin-Roman.otf"
+          ]
+        }
+      ]
+    ]
   }
 }
